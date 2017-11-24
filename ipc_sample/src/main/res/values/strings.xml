@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ipc_sample</string>
+    <string name="notification_title">Tracking</string>
+    <string name="notification_content">tracking service is running</string>
+
+
+</resources>

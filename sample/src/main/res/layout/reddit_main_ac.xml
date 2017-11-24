@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/main_screen_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:id="@+id/reddit_main_fr_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?android:actionBarSize"
+            android:layout_weight="1" />
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/reddit_main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            android:background="#00F"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/main_screen_drawer_navigation"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#000"
+        app:headerLayout="@layout/reddit_main_menu_header"
+        app:itemIconTint="#00F"
+        app:itemTextColor="#F00" />
+
+</android.support.v4.widget.DrawerLayout>

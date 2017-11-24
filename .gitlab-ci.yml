@@ -1,0 +1,17 @@
+before_script:  
+  - git submodule sync 
+  - git submodule update --init
+  - export ANDROID_HOME="/opt/android-sdk"
+  - chmod +x gradlew
+
+stages:
+  - build
+ 
+build_job:  
+  stage: build
+  script:
+   - /bin/bash ./gitlab_ci
+  artifacts:
+    paths:
+       - app/build/outputs/apk/
+  when: on_success

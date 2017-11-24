@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!-- ASH Init App --><!-- Copyright 2016 ASH Dev Team --><!-- Created by ein on 2016/5/21 -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/main_drawer_navigation_item_list"
+            android:title="@string/reddit_list_menu_item" />
+        <item
+            android:id="@+id/main_drawer_navigation_item_favorites"
+            android:title="@string/reddit_fav_menu_item" />
+
+    </group>
+
+</menu>

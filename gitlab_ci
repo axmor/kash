@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# get commit message
+COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+
+
+# see  if commit message not contains "[build ci]" string
+echo "Hello from Justix"
+./gradlew clean assembleDebug
+    exit 0
+fi

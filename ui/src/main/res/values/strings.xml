@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ui</string>
+    <string name="reddit_list_menu_item">List</string>
+    <string name="reddit_fav_menu_item">Favorites</string>
+
+</resources>
