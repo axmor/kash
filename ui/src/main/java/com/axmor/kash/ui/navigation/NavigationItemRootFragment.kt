@@ -14,7 +14,7 @@ import com.axmor.kash.ui.utils.loadCDataHtml
  */
 
 open class NavigationItemRootFragment<T>(private val menuItemId: Int, private val titleResId: Int, private val screenEnv: NavigatableScreenEnv,
-                                         private val fragmentFactory: () -> T) : NavigationItem where T : KashFragment<*, *> {
+                                         private val fragmentFactory: () -> T) : NavigationItem where T : KashFragment<*> {
 
     override fun getMenuItemId(): Int {
         return menuItemId

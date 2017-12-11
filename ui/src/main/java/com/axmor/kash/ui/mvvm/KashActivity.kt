@@ -20,7 +20,7 @@ import com.axmor.kash.ui.progress.ProgressListener
  * @see com.axmor.kash.sample.ui.main.MainMenuActivity
  */
 
-abstract class KashActivity<ViewModel, AppService> : AppCompatActivity(), ProgressListener, ErrorListener where AppService : CompositeService, ViewModel : KashViewModel<AppService> {
+abstract class KashActivity<ViewModel> : AppCompatActivity(), ProgressListener, ErrorListener where ViewModel : KashViewModel {
 
     protected lateinit var viewModel: ViewModel
 

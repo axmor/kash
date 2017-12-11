@@ -18,7 +18,7 @@ import com.axmor.kash.ui.mvvm.KashActivity
  *  @see com.axmor.kash.sample.ui.main.MainMenuActivity buildNavigation()
  */
 
-open class NavigationScene(hostActivity: KashActivity<*, *>, toolbar: Toolbar, val drawerLayout: DrawerLayout,
+open class NavigationScene(hostActivity: KashActivity<*>, toolbar: Toolbar, val drawerLayout: DrawerLayout,
                            val drawerNavigation: NavigationView,
                            openDrawerContentDescRes: Int,
                            closeDrawerContentDescRes: Int,

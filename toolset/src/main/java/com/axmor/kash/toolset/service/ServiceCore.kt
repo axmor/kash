@@ -14,7 +14,7 @@ import com.axmor.kash.toolset.service.interfaces.CompositeBuilder
 
 /**
  * Main logic of Android Service (CompositeService class), managing Components and service LifeTime.
- * Clients works with this instance as Composite to get Components by getService(ComponentInterface).
+ * Clients works with this instance as Composite to get Components by getComponent(ComponentInterface).
  * @see com.axmor.kash.ui.mvvm.KashViewModel onServicesConnected - usage as Composite.
  */
 
@@ -50,7 +50,7 @@ open class ServiceCore : Composite, CompositeBuilder {
         val componentLifetimeListener = ComponentLifetimeListener(lifeline)
         component.activate(object : ComponentContext(context, componentLifetimeListener) {
             override fun <TService> getService(tClass: Class<TService>): TService {
-                return this@ServiceCore.getService(tClass)
+                return this@ServiceCore.getComponent(tClass)
             }
         })
     }
@@ -106,7 +106,7 @@ open class ServiceCore : Composite, CompositeBuilder {
         }
     }
 
-    override fun <TService> getService(tClass: Class<TService>): TService {
+    override fun <TService> getComponent(tClass: Class<TService>): TService {
         aFalse(shutdown)
         if (shutdown) {
             throw IllegalStateException("This service has been shutdown.")

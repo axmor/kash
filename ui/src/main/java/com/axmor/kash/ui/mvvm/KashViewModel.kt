@@ -14,39 +14,14 @@ import com.axmor.kash.ui.progress.ProgressLiveData
  */
 
 /**
- * Android Components view model that binds to CompositeService and contains error and progress live data.
+ * Android Components view model that contains error and progress live data.
  * @see com.axmor.kash.sample.ui.favorites.FavoritesListViewModel
  */
 
-abstract class KashViewModel<AppService>(application: Application) : AndroidViewModel(application), ConnectionNode where  AppService : CompositeService {
+abstract class KashViewModel(application: Application) : AndroidViewModel(application) {
 
-    private var serviceConnection: CompositeServiceConnection<AppService>
-    private var isConnectedToServices = false
-    protected var services: Composite? = null
     val progress = ProgressLiveData()
     val error = ErrorLiveData()
 
-    init {
-        serviceConnection = CompositeServiceConnection(application, this, getAppServiceClass())
-        serviceConnection.onStart()
-    }
 
-    abstract fun getAppServiceClass(): Class<AppService>
-
-    override fun onCleared() {
-        super.onCleared()
-        serviceConnection.onStop()
-    }
-
-    override fun onServicesConnected(composite: Composite) {
-        services = composite
-        isConnectedToServices = true
-    }
-
-    override fun onServicesDisconnected() {
-        services = null
-        isConnectedToServices = false
-    }
-
-    override fun isConnected() = isConnectedToServices
 }

@@ -19,7 +19,7 @@ import com.axmor.kash.toolset.service.interfaces.Composite
  * @see com.axmor.kash.ui.mvvm.KashViewModel - usage.
  */
 
-open class CompositeServiceConnection<T>(private val context: Context, val rootConnection: ConnectionNode, serviceClass: Class<T>) where T : CompositeService {
+open class CompositeServiceConnection<T>(private val context: Context, val rootConnection: ConnectionNode, val serviceClass: Class<T>) where T : CompositeService {
 
     private var serviceIntent: Intent? = null
 
@@ -37,7 +37,7 @@ open class CompositeServiceConnection<T>(private val context: Context, val rootC
     }
 
     fun onStop() {
-        if (rootConnection.isConnected()) {
+        if (rootConnection.isConnected(serviceClass)) {
             onDisconnect()
         }
 
@@ -45,11 +45,11 @@ open class CompositeServiceConnection<T>(private val context: Context, val rootC
     }
 
     private fun onConnect(composite: Composite) {
-        rootConnection.onServicesConnected(composite)
+        rootConnection.onServicesConnected(composite, serviceClass)
     }
 
     private fun onDisconnect() {
-        rootConnection.onServicesDisconnected()
+        rootConnection.onServicesDisconnected(serviceClass)
     }
 
     private val serviceConnection = object : ServiceConnection {

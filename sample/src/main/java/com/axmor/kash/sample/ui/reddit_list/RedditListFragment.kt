@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.reddit_list_fr.*
 /**
  * Created by akolodyazhnyy on 8/29/2017.
  */
-class RedditListFragment : KashFragment<RedditListViewModel, AppService>(), RedditNewsAdapterDelegate.OnFavClickListener {
+class RedditListFragment : KashFragment<RedditListViewModel>(), RedditNewsAdapterDelegate.OnFavClickListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return container?.inflate(R.layout.reddit_list_fr)

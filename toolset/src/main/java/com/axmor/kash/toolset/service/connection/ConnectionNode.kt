@@ -1,5 +1,6 @@
 package com.axmor.kash.toolset.service.connection
 
+import com.axmor.kash.toolset.service.CompositeService
 import com.axmor.kash.toolset.service.interfaces.Composite
 
 /**
@@ -12,9 +13,9 @@ import com.axmor.kash.toolset.service.interfaces.Composite
  */
 
 interface ConnectionNode {
-    fun onServicesConnected(composite: Composite)
+    fun onServicesConnected(composite: Composite, serviceClass: Class<*>)
 
-    fun onServicesDisconnected()
+    fun onServicesDisconnected(serviceClass: Class<*>)
 
-    fun isConnected() : Boolean
+    fun isConnected(serviceClass: Class<*>): Boolean
 }

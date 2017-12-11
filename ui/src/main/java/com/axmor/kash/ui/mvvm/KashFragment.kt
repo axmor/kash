@@ -21,7 +21,7 @@ import com.axmor.kash.ui.progress.ProgressListener
  * @see com.axmor.kash.sample.ui.favorites.FavoritesListFragment
  */
 
-abstract class KashFragment<ViewModel, AppService> : Fragment(), ProgressListener, ErrorListener where AppService : CompositeService, ViewModel : KashViewModel<AppService> {
+abstract class KashFragment<ViewModel> : Fragment(), ProgressListener, ErrorListener  where ViewModel : KashViewModel {
 
     protected lateinit var viewModel: ViewModel
 

@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.reddit_list_fr.*
 /**
  * Created by akolodyazhnyy on 8/29/2017.
  */
-class FavoritesListFragment : KashFragment<FavoritesListViewModel, AppService>() {
+class FavoritesListFragment : KashFragment<FavoritesListViewModel>() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return container?.inflate(R.layout.reddit_list_fr)
@@ -42,7 +42,6 @@ class FavoritesListFragment : KashFragment<FavoritesListViewModel, AppService>()
 
     override fun onResume() {
         super.onResume()
-        viewModel.requestNews()
     }
 
 

@@ -12,5 +12,5 @@ package com.axmor.kash.toolset.service.interfaces
  */
 
 interface Composite {
-    fun <TServiceComponentInterface> getService(tClass: Class<TServiceComponentInterface>): TServiceComponentInterface
+    fun <TServiceComponentInterface> getComponent(tClass: Class<TServiceComponentInterface>): TServiceComponentInterface
 }

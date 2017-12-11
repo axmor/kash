@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.reddit_main_ac.*
 /**
  * Created by akolodyazhnyy on 8/29/2017.
  */
-class MainMenuActivity : KashActivity<MainMenuViewModel, AppService>(), NavigatableScreenEnv {
+class MainMenuActivity : KashActivity<MainMenuViewModel>(), NavigatableScreenEnv {
 
     private var navigationScene: NavigationScene? = null
 
@@ -60,7 +60,7 @@ class MainMenuActivity : KashActivity<MainMenuViewModel, AppService>(), Navigata
 
     override fun getContext() = this
 
-    override fun setRootFragment(fragment: KashFragment<*, *>, bundle: Bundle?) {
+    override fun setRootFragment(fragment: KashFragment<*>, bundle: Bundle?) {
         //check if already on screen
         var foundFragment = supportFragmentManager.findFragmentByTag(fragment.getFragmentTag())
         val isAlready = foundFragment != null
@@ -72,7 +72,7 @@ class MainMenuActivity : KashActivity<MainMenuViewModel, AppService>(), Navigata
         //set bundle to arguments if need
 
         if (!isAlready) {
-            transaction.addToBackStack((foundFragment as KashFragment<*, *>).getFragmentTag())
+            transaction.addToBackStack((foundFragment as KashFragment<*>).getFragmentTag())
         }
         transaction.commitAllowingStateLoss()
     }

@@ -24,5 +24,5 @@ interface NavigatableScreenEnv {
     /**
      * Calling for adding fragment to fragment container.
      */
-    fun setRootFragment(fragment: KashFragment<*, *>, bundle: Bundle?)
+    fun setRootFragment(fragment: KashFragment<*>, bundle: Bundle?)
 }
